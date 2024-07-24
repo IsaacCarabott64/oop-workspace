@@ -1,0 +1,5 @@
+The purpose of a log message supplied to a commit should be to identify the changes made in the commit
+A good commit message is brief enough that it isn't too long, but also mentions what it changed
+Committing my work after major features are implements should provide a good balance between not flooding the version control, but also having backups for each version of my code/project
+False
+
