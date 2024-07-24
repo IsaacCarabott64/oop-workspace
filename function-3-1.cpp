@@ -5,28 +5,31 @@ bool is_fanarray(int array[], int n) {
     return false;
   }
 
-  bool is_array_a_fanarray;
+  bool is_array_a_fanarray = true;
 
   for (int i = 0; i < n; i++){
-    std::cout << i << "   " << n-i << std::endl;
-    ..if (array[i] != array[n-i])
+    if (array[i] != array[n-i-1]){
+      is_array_a_fanarray = false;
+      //std::cout << i << "   " << n-i-1 << std::endl;
+    }
+    
+  }
+
+  int stop_i;
+  if (n % 2 == 0){
+    stop_i = (int) ( (n+1)/ 2 );
+  } else {
+    stop_i = (int) ( (n+2)/ 2 );
+  }
+
+  //std::cout << "stop_i = " << stop_i << std::endl;
+
+  for (int i = 1; i < stop_i; i++){
+    if (array[i] < array[i - 1]){
+      is_array_a_fanarray = false;
+      //std::cout << i << "   " << n-i-1 << std::endl;
+    }
   }
 
   return is_array_a_fanarray;
-}
-
-bool is_ascending(int array[], int n) {
-  if (n < 0) {
-    return false;
-  }
-
-  bool array_is_ascending = true;
-
-  for (int i = 1; i < n; i++) {
-    if (array[i] < array[i - 1]) {
-      array_is_ascending = false;
-      std::cout << i << " " << array[i] << " " << array[i - 1] << std::endl;
-    }
-  }
-  return array_is_ascending;
 }
