@@ -4,11 +4,10 @@
 // but will be implemented somewhere else
 extern int array_sum(int[], int);
 
-int main(){
+int main() {
+  int nums[] = {1, 2, 3, 4, 5};
 
-    int nums[] = {1, 2, 3, 4, 5};
+  std::cout << "Sum of array is " << array_sum(nums, 5) << std::endl;
 
-    std::cout << "Sum of array is " << array_sum(nums, 5) << std::endl;
-
-    return 0;
+  return 0;
 }
