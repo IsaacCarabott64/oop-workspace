@@ -11,7 +11,7 @@ int main() {
   if (is_ascending(nums, nums_length)) {
     std::cout << "Array is ascending" << std::endl;
   } else {
-    std::cout << "Array is descending" << std::endl;
+    std::cout << "Array is not ascending" << std::endl;
   }
 
   return 0;
