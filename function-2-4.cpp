@@ -19,9 +19,7 @@ bool is_ascending(int array[], int n) {
   for (int i = 1; i < n; i++) {
     if (!(array[i] >= array[i - 1])) {
       array_is_ascending = false;
-      //std::cout << "i" << i << " a[i-1]" << array[i - 1] << " a[i]" << array[i]
-                << " comp" << !(array[i] >= array[i - 1]) << " asc"
-                << array_is_ascending << std::endl;
+      //std::cout << "i" << i << " a[i-1]" << array[i - 1] << " a[i]" << array[i] << " comp" << !(array[i] >= array[i - 1]) << " asc" << array_is_ascending << std::endl;
       break;
     }
   }
