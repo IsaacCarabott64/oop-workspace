@@ -6,8 +6,9 @@ void changeValue(double* num){
 
 void printArray(double* array, int n){
   for (int i = 0; i < n; i++){
-    std::cout << array[i] << std::endl;
+    std::cout << array[i];
   }
+  std::cout << std::endl;
 }
 
 double arrayMax(double* array, int n){
