@@ -1,0 +1,15 @@
+#include "server.h"
+
+void Server::login(std::string password) {
+  if (this->password == password) {
+    this->isLoggedIn = true;
+  }
+};
+void Server::printLoginStatus() {
+  if (this->isLoggedIn) {
+    std::cout << "Logged in" << std::endl;
+  } else {
+    std::cout << "Log in with a password" << std::endl;
+  }
+}
+bool Server::loginStatus() { return isLoggedIn; }
