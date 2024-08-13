@@ -1,6 +1,7 @@
 #include <iostream>
 
 extern int* readNumbers();
+extern void printNumbers(int*, int);
 
 using namespace std;
 
@@ -9,11 +10,8 @@ int main(){
 
   cout << "Enter some numbers: " << endl;
   int* nums = readNumbers();
-
-  for (int i = 0; i < 10; i++){
-    cout << nums[i] << endl;
-  }
-
+  printNumbers(nums, 10);
+  
 
 
   return 0;
