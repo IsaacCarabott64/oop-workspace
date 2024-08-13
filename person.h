@@ -9,3 +9,14 @@ struct Person {
 };
 
 #endif
+
+
+#ifndef PERSON_LIST
+#define PERSON_LIST
+
+struct PersonList{
+  Person* people;
+  int numPeople;
+};
+
+#endif
