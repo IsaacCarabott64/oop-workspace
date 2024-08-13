@@ -10,6 +10,5 @@ int main(){
   int numslength = 4;
   cout << secondSmallestSum(nums, numslength) << endl;
 
-
   return 0;
 }

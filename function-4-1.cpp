@@ -17,7 +17,6 @@ void printNumbers(int* numbers, int length) {
 
 int secondSmallestSum(int* numbers, int length){
   int sumsl = (length * (length+1)) / 2;
-  cout << "sumsl: " << sumsl << endl;
   int sums[sumsl];
   int count = 0;
   for (int i = 0; i < length; i++){
@@ -26,7 +25,6 @@ int secondSmallestSum(int* numbers, int length){
       s += numbers[j];
       sums[count] = s;
       count++;
-      cout << i << " " << j << " " << s << endl;
     }
   }
 
@@ -36,7 +34,6 @@ int secondSmallestSum(int* numbers, int length){
       smallest = sums[i];
     }
   }
-  cout << "smallest: " << smallest << endl;
   int second_smallest = numbers[0];
   if (second_smallest == smallest){
     second_smallest = numbers[1];
@@ -46,6 +43,5 @@ int secondSmallestSum(int* numbers, int length){
       second_smallest = sums[i];
     }
   }
-  cout << "second smallest: " << second_smallest << endl;
   return second_smallest;
 }
