@@ -30,7 +30,6 @@ class Student {
   void set_ID(int new_ID) { ID = new_ID; }
   void set_grade(double new_grade) {
     this->grade = new_grade;
-    cout << "New grade is: " << this->grade << endl;
   }
   void print() {
     cout << "Student: " << name << " ID: " << ID << " Grade: " << grade << endl;
