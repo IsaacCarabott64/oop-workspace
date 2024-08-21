@@ -1,3 +1,5 @@
+#ifndef CAGE
+#define CAGE
 #include <string>
 
 class Cage {
@@ -7,8 +9,12 @@ class Cage {
     public:
         Cage();
         Cage(std::string newName, int newNumber);
+
         std::string getName();
         int getIDnum();
         void print();
+        
         ~Cage();
 };
+
+#endif
