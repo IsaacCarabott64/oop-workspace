@@ -1,66 +1,72 @@
 #include <iostream>
+
 using namespace std;
 
 
-class A{
-  protected:
-    int _s;
-  public:
-    A(int s): _s(s){}
-    A(): A(-1){};
-    virtual void print(){
-      cout << "S = " << this->_s << endl;
-  }
-  
-};
-class B : public A{
+class Point{
   private:
-    double _k;
+    int* _x;
+    int* _y;
   public:
-    B(int s, double k): A(s), _k(k){}
-    B(): B(0, 0){}
+    Point() {
+      _x = new int;
+      _y = new int;
+      *_x = 0;
+      *_y = 0;
+    }
+    Point(const Point &pnt){
+      _x = new int;
+      _y = new int;
+      *_x = *(pnt._x);
+      *_y = *(pnt._y);
+
+    }
+    void operator=(const Point &pnt){
+      *_x = *(pnt._x);
+      *_y = *(pnt._y);
+    }
+    void set_point(int x, int y){ *_x = x; *_y = y; }
     void print(){
-      cout << "S = " << this->_s << " K = " << this->_k << endl;
+      cout << *_x << "," << *_y << endl;
+    }
+    virtual ~Point(){
+      delete _x;
+      delete _y;
+      cout << "_x and _y were deleted" << endl;
+    }
+
+};
+
+class Point3d : public Point {
+  private:
+    int* _z;
+  public:
+    Point3d():Point(){
+      _z = new int;
+    }
+    void set_point(int x, int y, int z){
+      Point::set_point(x, y);
+      *_z = z;
+    }
+    ~Point3d(){
+      delete _z;
+      cout << "_z was deleted\n";
     }
 };
 
-class C : public A{
-  private:
-    string _str;
-  public:
-    C(int s, string str): A(s),_str(str){}
-    C(): C(0, "") {}
-    void print(){
-      cout << "S = " << this->_s << " str = " << this->_str << endl;
-    }
-};
+Point foo(){
+  Point pnt;
+  pnt.set_point(500, 500);
+  return pnt;
+}
 
-void test_print(A* a){
-  a->print();
-};
 
 
 int main(){
 
-  A* a[3];
+  Point* p = new Point3d;
 
-  a[0] = new A();
-  a[1] = new B();
-  a[2] = new C();
-
-  for (int i = 0; i < 3; i++){
-    test_print(a[i]);
-  }
-
-
-
-  //   // base class
-  //   A* a1;
-  //   // derived class
-  //   B b1(500, 0.5);
-  // 
-  //   // a pointer to a base class can point to object of derived class
-  //   a1 = &b1;
+  delete p;
 
   return 0;
 }
