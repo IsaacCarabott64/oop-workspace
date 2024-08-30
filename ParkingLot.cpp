@@ -20,14 +20,18 @@ void ParkingLot::parkVehicle(Vehicle* new_vehicle){
 };
 
 void ParkingLot::unparkVehicle(int ID){
-  int remove_i = 0;
+  int remove_i = -1;
   for (int i = 0; i < count; i++){
     if (vehicles[i]->getID() == ID){
       remove_i = ID;
     }
   }
-  for (int i = remove_i; i < count-1; i++){
-    vehicles[i] = vehicles[i+1];
+  if (remove_i == -1){
+    std::cout << "Vehicle not in the lot" << std::endl;
+  } else {
+    for (int i = remove_i; i < count-1; i++){
+      vehicles[i] = vehicles[i+1];
+    }
+    count--;
   }
-  count--;
 }
