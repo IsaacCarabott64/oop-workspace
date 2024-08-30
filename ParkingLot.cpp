@@ -24,6 +24,7 @@ void ParkingLot::unparkVehicle(int ID){
   for (int i = 0; i < count; i++){
     if (vehicles[i]->getID() == ID){
       remove_i = ID;
+      break;
     }
   }
   if (remove_i == -1){

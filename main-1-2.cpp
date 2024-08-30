@@ -27,6 +27,8 @@ int main(){
   pl.parkVehicle(new Car(11));
   pl.unparkVehicle(3);
   pl.parkVehicle(new Car(12));
+
+  pl.unparkVehicle(2000);
  
 
   return 0;
