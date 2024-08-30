@@ -37,6 +37,16 @@ void ParkingLot::unparkVehicle(int ID){
   }
 }
 
+int ParkingLot::countOverstayingVehicles(int maxParkingDuration){
+  int overstay_count = 0;
+  for (int i = 0; i < count; i++){
+    if (vehicles[i]->getParkingDuration() > maxParkingDuration){
+      overstay_count++;
+    }
+  }
+  return overstay_count;
+}
+
 void ParkingLot::print(){
   std::cout << "Parking lot is at " << count << "/" << max << " capacity" << std::endl;
   for (int i = 0; i < count; i++){
