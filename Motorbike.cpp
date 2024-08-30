@@ -1,11 +1,10 @@
 #include "Motorbike.h"
 #include <ctime>
+#include <cmath>
 
 Motorbike::Motorbike(int ID): Vehicle(ID){};
 
 int Motorbike::getParkingDuration(){
-  std::time_t now = time(nullptr);
-  std::time_t diff = (now-getTimeOfEntry())*0.85;
-  return diff;
+  return (int)((time(nullptr) - Vehicle::getTimeOfEntry)*0.85);
 };
 
