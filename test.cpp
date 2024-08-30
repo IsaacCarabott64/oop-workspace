@@ -8,7 +8,7 @@ class A{
   public:
     A(int s): _s(s){}
     A(): A(-1){};
-    void print(){
+    virtual void print(){
       cout << "S = " << this->_s << endl;
   }
   
@@ -24,23 +24,33 @@ class B : public A{
     }
 };
 
+class C : public A{
+  private:
+    string _str;
+  public:
+    C(int s, string str): A(s),_str(str){}
+    C(): C(0, "") {}
+    void print(){
+      cout << "S = " << this->_s << " str = " << this->_str << endl;
+    }
+};
+
 void test_print(A* a){
   a->print();
-}
-
+};
 
 
 int main(){
 
-  A a1(100);
-  B b1(200, 0.5);
+  A* a[3];
 
-  a1.print();
-  b1.print();
+  a[0] = new A();
+  a[1] = new B();
+  a[2] = new C();
 
-  test_print(&a1);
-  test_print(&b1);
-
+  for (int i = 0; i < 3; i++){
+    test_print(a[i]);
+  }
 
 
 
