@@ -10,7 +10,7 @@ int main(){
 
   int n = 3;  
 
-  Vehicle* vehicles[n];
+  Vehicle** vehicles = new;
   
   vehicles[0] = new Car(1);
   vehicles[1] = new Bus(2);
