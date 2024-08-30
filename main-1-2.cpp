@@ -24,12 +24,11 @@ int main(){
   pl.parkVehicle(new Car(9));
   pl.parkVehicle(new Car(10));
 
+  pl.print();
+  pl.unparkVehicle(5);
+  pl.print();
   pl.parkVehicle(new Car(11));
-  pl.unparkVehicle(3);
-  pl.parkVehicle(new Car(12));
-
-  pl.unparkVehicle(2000);
- 
+  pl.print();
 
   return 0;
 }

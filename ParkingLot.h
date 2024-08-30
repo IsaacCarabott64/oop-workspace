@@ -13,6 +13,7 @@ class ParkingLot{
     int getCount();
     void parkVehicle(Vehicle* new_vehicle);
     void unparkVehicle(int ID);
+    void print();
 };
 
 #endif

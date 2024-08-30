@@ -23,7 +23,7 @@ void ParkingLot::unparkVehicle(int ID){
   int remove_i = -1;
   for (int i = 0; i < count; i++){
     if (vehicles[i]->getID() == ID){
-      remove_i = ID;
+      remove_i = i;
       break;
     }
   }
@@ -35,4 +35,12 @@ void ParkingLot::unparkVehicle(int ID){
     }
     count--;
   }
+}
+
+void ParkingLot::print(){
+  std::cout << "Parking lot is at " << count << "/" << max << " capacity" << std::endl;
+  for (int i = 0; i < count; i++){
+    std::cout << vehicles[i]->getID() << " ";
+  }
+  std::cout << "\n" << std::endl;
 }
