@@ -1,7 +1,9 @@
 #include "House.h"
 
 House::House(): House(0){};
-House::House(int numAppliances): numAppliances(numAppliances),capacity(0){};
+House::House(int numAppliances): numAppliances(numAppliances),capacity(0){
+  appliances = new Appliance*[numAppliances];
+};
 
 bool House::addAppliance(Appliance* appliance){
   if (capacity == numAppliances){
