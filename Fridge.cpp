@@ -6,7 +6,7 @@ Fridge::Fridge(int powerRating, double volume){
   this->volume = volume;
 };
 
-void Fridge::set_volume(double volume){ this->volume = volume; };
-double Fridge::get_volume(){ return volume; };
+void Fridge::setVolume(double volume){ this->volume = volume; };
+double Fridge::getVolume(){ return volume; };
 
 double Fridge::getPowerConsumption(){ return (get_powerRating() * 24 * (volume / 100)); }

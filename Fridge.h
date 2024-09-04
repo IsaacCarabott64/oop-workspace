@@ -10,8 +10,8 @@ class Fridge : public Appliance {
     Fridge();
     Fridge(int powerRating, double volume);
     
-    void set_volume(double volume);
-    double get_volume();
+    void setSolume(double volume);
+    double getVolume();
 
     double getPowerConsumption();
 

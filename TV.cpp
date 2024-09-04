@@ -7,8 +7,8 @@ TV::TV(int powerRating, double screenSize){
 
 };
 
-void TV::set_screenSize(double screenSize){ this->screenSize = screenSize; };
-double TV::get_screenSize(){ return screenSize; };
+void TV::setScreenSize(double screenSize){ this->screenSize = screenSize; };
+double TV::getScreenSize(){ return screenSize; };
 
 double TV::getPowerConsumption(){
   return (get_powerRating() * (screenSize / 10));
