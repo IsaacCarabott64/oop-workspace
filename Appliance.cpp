@@ -1,6 +1,9 @@
 #include "Appliance.h"
 
-Appliance::Appliance(): Appliance(0),isOn(false){};
+Appliance::Appliance(){
+  powerRating = 0;
+  isOn = false;
+};
 Appliance::Appliance(int powerRating): powerRating(powerRating),isOn(false){};
 
 int Appliance::get_powerRating(){ return powerRating; };

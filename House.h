@@ -5,8 +5,8 @@
 
 class House {
   private:
-    int capacity;
     int numAppliances;
+    int capacity;
     Appliance** appliances;
   public:
     House();
