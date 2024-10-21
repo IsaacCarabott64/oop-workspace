@@ -2,6 +2,8 @@
 #define GAMEENTITY
 
 #include <tuple>
+#include "Utils.h"
+#include <iostream>
 
 enum GameEntityType{
   ExplosionType,
@@ -11,39 +13,40 @@ enum GameEntityType{
 };
 
 class GameEntity{
-  private:
+  protected:
     std::tuple<int, int> position;
     GameEntityType type;
   public:
-    GameEntity(): GameEntity(0, 0, 'N'){}
+    GameEntity(): GameEntity(-1, -1, 'N'){}
     GameEntity(int x, int y, char type){
       position = std::tuple<int,int> {x,y};
       switch (type){
         case 'e':
         case 'E':
-          this->type = ExplosionType;
+          this->type = GameEntityType::ExplosionType;
           break;
         case 'm':
         case 'M':
-          this->type = MineType;
+          this->type = GameEntityType::MineType;
           break;
         case 'n':
         case 'N':
-          this->type = NoneType;
+          this->type = GameEntityType::NoneType;
           break;
         case 's':
         case 'S':
-          this->type = ShipType;
+          this->type = GameEntityType::ShipType;
           break;
       }
     }
 
-    std::tuple<int, int> getPos(){
-      return position;
-    }
+    void setPos(std::tuple<int,int> position){ this->position = position; }
+    std::tuple<int, int> getPos(){ return position; }
+    void setType(GameEntityType type){ this->type = type; }
+    GameEntityType getType(){ return type; }
 
-    GameEntityType getType(){
-      return type;
+    void print(){
+      std::cout << "Type: " << type << "   Pos: " << Utils::tupleToStr(position) << std::endl;
     }
 
 };

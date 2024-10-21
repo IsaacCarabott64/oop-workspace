@@ -6,9 +6,7 @@
 using namespace std;
 
  
-string tupleToStr(std::tuple<int,int> tp){
-  return "(" + to_string(get<0>(tp)) + "," + to_string(get<1>(tp)) + ")";
-}
+
 
 int main(){
 

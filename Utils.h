@@ -4,6 +4,7 @@
 #include <tuple>
 #include <cstdlib>
 #include <cmath>
+#include <string>
 
 class Utils{
   public:
@@ -19,6 +20,9 @@ class Utils{
       int y2 = std::get<1>(pos2);
 
       return sqrt( (x1-x2) *(x1-x2) + (y1-y2)*(y1-y2) );
+    }
+    static std::string tupleToStr(std::tuple<int,int> tp){
+      return "(" + std::to_string(std::get<0>(tp)) + "," + std::to_string(std::get<1>(tp)) + ")";
     }
 };
 
