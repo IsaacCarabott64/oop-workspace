@@ -16,15 +16,13 @@ int main(){
 
   srand(time(NULL));
 
-  tuple<int,int> startPos = {0,0};
-  Ship s(startPos);
+  Ship s(0, 0);
   
   s.print();
   s.move(1, 1);
   s.print();
 
-  tuple<int,int> minePos = {2, 2};
-  Mine m(minePos);
+  Mine m(2, 2);
   m.print();
   
   //Explosion e = m.explode();

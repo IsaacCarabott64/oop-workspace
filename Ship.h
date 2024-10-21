@@ -6,8 +6,8 @@
 class Ship : public GameEntity{
   private:
   public:
-    Ship(std::tuple<int,int> pos){
-      position = pos;
+    Ship(int x, int y){
+      position = std::tuple<int,int>(x, y);
       type = GameEntityType::ShipType;
     }
     void move(int dx, int dy){

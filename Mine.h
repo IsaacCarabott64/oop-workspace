@@ -7,8 +7,8 @@
 class Mine : public GameEntity{
   private:
   public:
-    Mine(std::tuple<int,int> pos){
-      position = pos;
+    Mine(int x, int y){
+      position = std::tuple<int,int>(x, y);
       type = GameEntityType::MineType;
     }
     Explosion explode(){
