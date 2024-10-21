@@ -2,6 +2,9 @@
 
 using namespace std;
 
+#define enumToString(enumValue)\
+  # enumValue
+
 enum CharacterType{
   WizardType,
   WarriorType,
@@ -34,11 +37,8 @@ class Warrior{
 
 int main(){
 
-  Wizard w;
-  Warrior wa;
-
-  cout << characterTypeToString(w.getType()) << endl;
-  cout << characterTypeToString(wa.getType()) << endl;
+  cout << characterTypeToString(CharacterType::WizardType) << endl;
+  cout << characterTypeToString(CharacterType::WarriorType) << endl;
   
   return 0;
 }
