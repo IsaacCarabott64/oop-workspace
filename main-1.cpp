@@ -12,15 +12,15 @@ string tupleToStr(std::tuple<int,int> tp){
 
 int main(){
 
+  srand(time(NULL));
+
   GameEntity ge(1, 2, 'E');
   cout << "Type: " << ge.getType() << "   Pos: " << tupleToStr(ge.getPos()) << endl;
 
-  Utils u;
-
   for (int i = 0; i < 10; i++){
-    tuple<int,int> p1 = u.generateRandomPos(10,10);
-    tuple<int,int> p2 = u.generateRandomPos(10,10);
-    cout << "Pos 1: " << tupleToStr(p1) << "  Pos 2:" << tupleToStr(p2) << "   Dist: " << u.calculateDistance(p1, p2) << endl;
+    tuple<int,int> p1 = Utils::generateRandomPos(10,10);
+    tuple<int,int> p2 = Utils::generateRandomPos(10,10);
+    cout << "Pos 1: " << tupleToStr(p1) << "  Pos 2:" << tupleToStr(p2) << "   Dist: " << Utils::calculateDistance(p1, p2) << endl;
   }
 
   
