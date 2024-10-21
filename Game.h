@@ -15,6 +15,9 @@ class Game{
   public:
     Game(){};
 
+    vector<GameEntity*> get_entities(){ return entities; }
+    void set_entities(vector<GameEntity*> entities){ this->entities = entities; }
+
     vector<GameEntity*> initGame(int numShips, int numMines, int gridWidth, int gridHeight){
       for (int i = 0; i < numShips; i++){
         tuple<int,int> newPos = Utils::generateRandomPos(gridWidth, gridHeight);
