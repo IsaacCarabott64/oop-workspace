@@ -5,6 +5,7 @@
 #include "Explosion.h"
 #include "Ship.h"
 #include "Mine.h"
+#include "Game.h"
 
 using namespace std;
  
@@ -16,18 +17,13 @@ int main(){
 
   srand(time(NULL));
 
-  Ship s(0, 0);
-  
-  s.print();
-  s.move(1, 1);
-  s.print();
+  Game g;
 
-  Mine m(2, 2);
-  m.print();
-  
-  Explosion e = m.explode();
-  e.apply(s);
-  s.print();
+  cout << "Setting up game" << endl;
+  g.initGame(1, 5, 3, 3);
+
+  cout << "\nStarting gameloop" << endl;
+  g.gameLoop(10, 1);
   
 
   return 0;

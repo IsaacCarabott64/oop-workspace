@@ -2,8 +2,8 @@
 #define GAMEENTITY
 
 #include <tuple>
-#include "Utils.h"
 #include <iostream>
+#include "Utils.h"
 
 enum GameEntityType{
   ExplosionType,
