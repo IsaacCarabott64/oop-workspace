@@ -2,43 +2,43 @@
 
 using namespace std;
 
-enum CoinState{
-  Heads,
-  Tails,
-  Side
+enum CharacterType{
+  WizardType,
+  WarriorType,
 };
 
-class Coin{
+string characterTypeToString(CharacterType ct){
+  switch (ct){
+    case CharacterType::WizardType:
+      return "Wizard";
+    case CharacterType::WarriorType:
+      return "Warrior";
+    default:
+      return "Invalid";
+  }
+}
+
+class Wizard{
   public:
-  CoinState getState(){
-    // 'H' is heads
-    // 'T' is tails
-    // 'S' is side
-    return CoinState::Heads;
+  CharacterType getType(){
+    return CharacterType::WizardType;
+  }
+};
+
+class Warrior{
+  public:
+  CharacterType getType(){
+    return CharacterType::WarriorType;
   }
 };
 
 int main(){
 
-  // coin: heads, tails, side
-  // true -> heads
-  // false -> tails
+  Wizard w;
+  Warrior wa;
+
+  cout << characterTypeToString(w.getType()) << endl;
+  cout << characterTypeToString(wa.getType()) << endl;
   
-
-  Coin c;
-
-  switch (c.getState()){
-    case CoinState::Heads:
-      cout << "Heads" << endl;
-      break;
-    case CoinState::Tails:
-      cout << "Tails" << endl;
-      break;
-    case CoinState::Side:
-      cout << "Side" << endl;
-      break;
-    default:
-      cout << "default" << endl;
-      break;
-  }
+  return 0;
 }
