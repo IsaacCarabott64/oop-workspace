@@ -7,8 +7,8 @@ using namespace std;
 
 int main(){
 
-  pair p1(0,0);// = {0, 0};
-  pair p2(1,2);// = {1, 2};
+  pair<int,int> p1(0,0);// = {0, 0};
+  pair<int,int> p2(1,2);// = {1, 2};
 
   cout << p1.first << " " << p1.second << endl;
   cout << p2.first << " " << p2.second << endl;
