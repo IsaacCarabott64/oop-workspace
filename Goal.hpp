@@ -20,7 +20,7 @@ class Goal : public Interactable{
     InteractableType getType(){ return InteractableType::GOAL; }
 
 
-} 
+};
 
 
 #endif

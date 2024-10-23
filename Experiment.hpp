@@ -19,6 +19,6 @@ class Experiment : public Interactable {
       return false;
     }
 
-    InteractableType getType(){ return InteractableType::EXPERIMENT; }
+  InteractableType getType(){ return InteractableType::EXPERIMENT; }
 };
 #endif

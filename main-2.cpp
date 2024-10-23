@@ -3,6 +3,9 @@
 #include "Helper.hpp"
 #include "GridItem.hpp"
 #include "Scientist.hpp"
+#include "Interactable.hpp"
+#include "Goal.hpp"
+#include "Experiment.hpp"
 
 using namespace std;
 
@@ -17,6 +20,8 @@ int main(){
   s.print();
   cout << s.move(5, 5) << endl;
   s.print();
+
+  
 
 
 

@@ -7,7 +7,7 @@
 enum InteractableType{
   GOAL,
   EXPERIMENT
-}
+};
 
 class Interactable : public GridItem{
   protected:
