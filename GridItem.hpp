@@ -20,14 +20,14 @@ class GridItem{
     GridItem(): GridItem(0, 0, 0, 0){}
     void setCoordinates(int x, int y){ this->x = x; this->y = y; }
     std::pair<int,int> getCoordinates(){
-      std::pair p(x, y);
+      std::pair<int,int> p(x, y);
       return p;
     }
     int getGridWidth(){ return width; }
     int getGridHeight(){ return height; }
     int getActiveGridItemCount(){ return activeGridItemCount; }
     virtual ~GridItem(){ activeGridItemCount--;}
-    void print(){
+    virtual void print(){
       std::cout << "(" << x << "," << y << ")  " << "WxH=" << width << "x" << height << std::endl;
     }
 };
