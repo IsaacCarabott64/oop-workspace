@@ -18,6 +18,8 @@ class Interactable : public GridItem{
       activeInteractableCount++;
     }
 
+    int getActiveInteractableCount(){ return activeInteractableCount; }
+
     virtual bool interact(Scientist* player) = 0;
     virtual InteractableType getType() = 0;
 
