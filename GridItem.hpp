@@ -20,7 +20,7 @@ class GridItem{
     GridItem(): GridItem(0, 0, 0, 0){}
     void setCoordinates(int x, int y){ this->x = x; this->y = y; }
     std::pair<int,int> getCoordinates(){
-      std::pair p = {x, y};
+      std::pair p(x, y);
       return p;
     }
     int getGridWidth(){ return width; }
